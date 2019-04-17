@@ -5,12 +5,12 @@ const methodOverride	= require('method-override');
 
 require('./db/db.js');
 
-const cakesController = require('./controllers/cakes.js');
-
-
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
+
+
+const cakesController = require('./controllers/cakes.js');
 
 app.use('/cakes', cakesController);
 

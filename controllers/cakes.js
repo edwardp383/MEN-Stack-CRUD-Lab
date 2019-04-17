@@ -84,37 +84,37 @@ router.get('/new', (req, res) => {
 
 // // show route, this should return theCake that matches
 // // the 'id' in the request url from the client (aka in our case the browser)
-// router.get('/:id', (req, res) => {
+router.get('/:id', (req, res) => {
 
 
-//  Cake.findOne({_id: req.params.id}, (err, foundCake) => {
-//       if(err){
-//         res.send(err);
-//       } else {
-//           console.log(typeof foundCake, 'foundCake');
-//           if(foundCake != null){
+ Cake.findOne({_id: req.params.id}, (err, foundCake) => {
+      if(err){
+        res.send(err);
+      } else {
+          console.log(typeof foundCake, 'foundCake');
+          if(foundCake != null){
 
-//               res.render('show.ejs', {
-//                 cake: foundCake // this is how we inject js
-//                                             // variables into our template
-//                                             // inside of show.ejs
-//                                             // we have a variable called
-//                                             //Cake in show.ejs
-//               });
+              res.render('show.ejs', {
+                cake: foundCake // this is how we inject js
+                                            // variables into our template
+                                            // inside of show.ejs
+                                            // we have a variable called
+                                            //Cake in show.ejs
+              });
 
-//           } else {
-//             res.send('no cake found')
-//           }
-
-
-//       }
-//   });
+          } else {
+            res.send('no cake found')
+          }
 
 
-//   // render method takes a template file as its first argument
-//   // ejs, handlebars, jade, mustache
+      }
+  });
 
-// });
+
+  // render method takes a template file as its first argument
+  // ejs, handlebars, jade, mustache
+
+});
 
 
 
