@@ -8,7 +8,10 @@
 	<ul>
 		<% for (let i = 0; i < cakes.length; i++) { %>
 			<li>
-				Name:<a href="/cakes/<%=cakes[i].id%>"> <%= cakes[i].name %></a>
+				Name:<a href="/cakes/<%=cakes[i].id%>"> <%= cakes[i].name %></a><br/>
+				<form action="/cakes/<%=cakes[i].id%>?_method=DELETE" method="POST">
+					<button>Delete Cake</button>
+				</form>
 			</li>
 		<% } %>
 

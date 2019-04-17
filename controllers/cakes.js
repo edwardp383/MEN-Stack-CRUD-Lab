@@ -44,21 +44,21 @@ router.get('/new', (req, res) => {
 
 
 
-// router.delete('/:id', (req, res) => {
-//  Cake.findByIdAndRemove(req.params.id, (err, foundCake) => {
-//       if(err){
-//         res.send(err);
-//       } else {
-//           console.log(typeof foundCake, 'foundCake');
-//           if(foundCake != null){
-//             res.redirect('/cakes');
+router.delete('/:id', (req, res) => {
+ Cake.findByIdAndRemove(req.params.id, (err, foundCake) => {
+      if(err){
+        res.send(err);
+      } else {
+          console.log(typeof foundCake, 'foundCake');
+          if(foundCake != null){
+            res.redirect('/cakes');
 
-//           } else {
-//             res.send('no Cake found')
-//           }
-//       }
-//   })
-// });
+          } else {
+            res.send('no Cake found')
+          }
+      }
+  })
+});
 
 
 // router.put('/:id', (req, res) => {
