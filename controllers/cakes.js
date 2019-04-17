@@ -70,12 +70,12 @@ router.delete('/:id', (req, res) => {
 //   res.redirect('/cakes')
 // });
 
-// router.get('/:id/edit', (req, res) => {
-//   res.render('edit.ejs', {
-//     cake: cakes[req.params.id],
-//     id: req.params.id
-//   });
-// })
+router.get('/:id/edit', (req, res) => {
+  res.render('edit.ejs', {
+    cake: cakes[req.params.id],
+    id: req.params.id
+  });
+})
 
 
 
