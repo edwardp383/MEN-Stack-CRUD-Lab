@@ -2,18 +2,17 @@ const express 			= require('express');
 const app 				= express();
 const bodyParser 		= require('body-parser');
 const methodOverride	= require('method-override');
-const Cake				= require('./models/cake.js')
 
-require('./db/db.js')
+require('./db/db.js');
 
-const cakeController = require('./controllers/cakes.js')
+const cakesController = require('./controllers/cakes.js');
 
 
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
-app.use('/cakes', cakeController)
+app.use('/cakes', cakesController);
 
 
 
